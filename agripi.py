@@ -1,9 +1,11 @@
-from Tkinter import *
+#!/usr/bin/env python
 
 import sys, optparse, subprocess, urllib2, os, os.path, errno, zipfile, string, json, platform, shutil, tarfile, urlparse, tempfile, multiprocessing
 from subprocess import Popen, PIPE
 import argparse
 import sys
+
+from Tkinter import *
 
 def callWithoutPrint(cmdline):
     ret = subprocess.call(cmdline, shell=True)
