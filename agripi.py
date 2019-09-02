@@ -6,6 +6,7 @@ import argparse
 import sys
 
 from Tkinter import *
+PATH = os.getcwd();
 
 def callWithoutPrint(cmdline):
     ret = subprocess.call(cmdline, shell=True)
@@ -33,10 +34,11 @@ btn.grid(column=1, row=0)
 
 
 def install1():
-    if os.path.exists("~/agrigpspi"):
+    print(PATH + "/agrigpspi")
+    if os.path.exists(PATH + "/agrigpspi"):
         call("git clone https://github.com/lemairec/agrigpspi.git ~/agrigpspi;")
     else:
-        os.makedirs("cd ~/agrigpspi; git reset --hard; git pull")
+        call("cd ~/agrigpspi; git reset --hard; git pull")
     call("~/agrigpspi/agrigpspi.py install")
 
 btn = Button(window, text="install", command=install1)
