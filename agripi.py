@@ -22,18 +22,23 @@ window.title("Welcome to LikeGeeks app")
 window.geometry('350x200')
 
 def clicked1():
-   call("~/agrigpspi/agrigpspi.py run")
+    call("~/agrigpspi/agrigpspi.py run")
 btn = Button(window, text="Agri gps", command=clicked1)
 btn.grid(column=0, row=0)
 
 def clicked2():
-   call("~/bineuse/bineuse.py run")
+    call("~/bineuse/bineuse.py run")
 btn = Button(window, text="Bineuse", command=clicked2)
 btn.grid(column=1, row=0)
 
 
 def install1():
-   call("rm -rf ~/agrigpspi; git clone https://github.com/lemairec/agrigpspi.git ~/agrigpspi; ~/agrigpspi/agrigpspi.py install")
+    if not os.path.exists("~/agrigpspi"):
+        os.makedirs("cd ~/agrigpspi; git reset --hard; git pull")
+    else:
+        call("git clone https://github.com/lemairec/agrigpspi.git ~/agrigpspi;")
+    call("~/agrigpspi/agrigpspi.py install")
+    
 btn = Button(window, text="install", command=install1)
 btn.grid(column=0, row=1)
 
