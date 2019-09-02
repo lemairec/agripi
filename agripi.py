@@ -39,7 +39,7 @@ btn.grid(column=0, row=1)
 
 
 def update_setup():
-   call("cd agripi; git pull;")
+   call("cd ~/agripi; git pull;")
    exit();
 btn = Button(window, text="update setup", command=update_setup)
 btn.grid(column=0, row=3)
