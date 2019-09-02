@@ -1,5 +1,5 @@
 [Desktop Entry]
 Type=Application
 Name=bineuse_pi
-Exec=sh -c "~/agri/agri.py"
+Exec=sh -c "~/agri/agripi.py"
 Terminal=true
