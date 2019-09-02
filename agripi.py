@@ -38,8 +38,7 @@ def install1():
     if os.path.exists(PATH + "/agrigpspi"):
         call("cd ~/agrigpspi; git reset --hard; git pull")
     else:
-        call("git clone https://github.com/lemairec/agrigpspi.git ~/agrigpspi;")
-    call("~/agrigpspi/agrigpspi.py install")
+        call("git clone https://github.com/lemairec/agrigpspi.git ~/agrigpspi; ~/agrigpspi/agrigpspi.py install")
 
 btn = Button(window, text="install", command=install1)
 btn.grid(column=0, row=1)
