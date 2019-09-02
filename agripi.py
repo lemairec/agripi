@@ -33,7 +33,7 @@ btn.grid(column=1, row=0)
 
 
 def install1():
-   call("rm -rf ~/agrigpspi; git clone https://github.com/lemairec/agrigpspi.git; ~/agrigpspi/agrigpspi.py install")
+   call("rm -rf ~/agrigpspi; git clone https://github.com/lemairec/agrigpspi.git ~/agrigpspi; ~/agrigpspi/agrigpspi.py install")
 btn = Button(window, text="install", command=install1)
 btn.grid(column=0, row=1)
 
