@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=agripi
-Exec=sh -c "~/agri/agripi.py"
+Exec=sh -c "~/agripi/agripi.py"
 Terminal=true
 Hidden=false
 X-GNOME-Autostart-enabled=true
