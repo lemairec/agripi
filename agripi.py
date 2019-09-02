@@ -31,4 +31,11 @@ def clicked2():
 btn = Button(window, text="Bineuse", command=clicked2)
 btn.grid(column=1, row=0)
 
+
+def install1():
+   call("rm -rf ~/agrigps; git clone https://github.com/lemaire/agrigps.git")
+btn = Button(window, text="install", command=clicked1)
+btn.grid(column=0, row=1)
+
+
 window.mainloop()
