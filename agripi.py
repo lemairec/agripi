@@ -38,4 +38,11 @@ btn = Button(window, text="install", command=install1)
 btn.grid(column=0, row=1)
 
 
+def update_setup():
+   call("cd agripi; git pull;")
+   exit();
+btn = Button(window, text="update setup", command=update_setup)
+btn.grid(column=0, row=3)
+
+
 window.mainloop()
