@@ -27,28 +27,51 @@ def clicked1():
 btn = Button(window, text="Agri gps", command=clicked1)
 btn.grid(column=0, row=0)
 
-def clicked2():
-    call("~/bineuse/bineuse.py run")
-btn = Button(window, text="Bineuse", command=clicked2)
-btn.grid(column=1, row=0)
-
-
 def install1():
     print(PATH + "/agrigpspi")
     if os.path.exists(PATH + "/agrigpspi"):
         call("cd ~/agrigpspi; git reset --hard; git pull")
     else:
         call("git clone https://github.com/lemairec/agrigpspi.git ~/agrigpspi; ~/agrigpspi/agrigpspi.py install")
-
-btn = Button(window, text="install", command=install1)
+btn = Button(window, text="pull install", command=install1)
 btn.grid(column=0, row=1)
+
+
+def nettoyage1():
+    call("rm -rf ~/agrigpspi/build")
+
+btn = Button(window, text="nettoyage", command=nettoyage1)
+btn.grid(column=0, row=2)
+
+
+def clicked2():
+    call("~/bineuse/bineuse.py run")
+btn = Button(window, text="Bineuse", command=clicked2)
+btn.grid(column=1, row=0)
+
+def install2():
+    print(PATH + "/bineuse")
+    if os.path.exists(PATH + "/bineuse"):
+        call("cd ~/bineuse; git reset --hard; git pull")
+    else:
+        call("git clone https://github.com/lemairec/bineuse.git ~/bineuse; ~/bineuse/bineuse.py install")
+btn = Button(window, text="pull install", command=install2)
+btn.grid(column=1, row=1)
+
+def nettoyage2():
+    call("rm -rf ~/bineuse/build")
+
+btn = Button(window, text="nettoyage", command=nettoyage2)
+btn.grid(column=1, row=2)
+
+
 
 
 def update_setup():
    call("cd ~/agripi; git pull;")
    exit();
 btn = Button(window, text="update setup", command=update_setup)
-btn.grid(column=0, row=3)
+btn.grid(column=2, row=5)
 
 
 window.mainloop()
