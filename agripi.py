@@ -34,14 +34,14 @@ def install1():
     else:
         call("git clone https://github.com/lemairec/agrigpspi.git ~/agrigpspi; ~/agrigpspi/agrigpspi.py install")
 btn = Button(window, text="pull install", command=install1)
-btn.grid(column=0, row=1)
+btn.grid(column=0, row=3)
 
 
 def nettoyage1():
-    call("rm -rf ~/agrigpspi/build")
+    call("rm -rf ~/agrigpspi")
 
 btn = Button(window, text="nettoyage", command=nettoyage1)
-btn.grid(column=0, row=2)
+btn.grid(column=0, row=5)
 
 
 def clicked2():
@@ -56,13 +56,25 @@ def install2():
     else:
         call("git clone https://github.com/lemairec/bineuse.git ~/bineuse; ~/bineuse/bineuse.py install")
 btn = Button(window, text="pull install", command=install2)
-btn.grid(column=1, row=1)
+btn.grid(column=1, row=3)
 
 def nettoyage2():
     call("rm -rf ~/bineuse/build")
 
 btn = Button(window, text="nettoyage", command=nettoyage2)
-btn.grid(column=1, row=2)
+btn.grid(column=1, row=7)
+
+def master():
+    call("cd ~/bineuse; git checkout master")
+
+btn = Button(window, text="nouveaute", command=master)
+btn.grid(column=1, row=5)
+
+def prod():
+    call("cd ~/bineuse; git checkout prod")
+
+btn = Button(window, text="prod", command=prod)
+btn.grid(column=1, row=6)
 
 
 
@@ -71,7 +83,7 @@ def update_setup():
    call("cd ~/agripi; git pull;")
    exit();
 btn = Button(window, text="update setup", command=update_setup)
-btn.grid(column=2, row=5)
+btn.grid(column=2, row=2)
 
 
 window.mainloop()
