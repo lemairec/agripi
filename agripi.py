@@ -79,11 +79,17 @@ btn.grid(column=1, row=6)
 
 
 
+def serial():
+   call("python ~/agripi/my_serial.py")
+   exit();
+btn = Button(window, text="serial", command=serial)
+btn.grid(column=2, row=2)
+
 def update_setup():
    call("cd ~/agripi; git pull;")
    exit();
 btn = Button(window, text="update setup", command=update_setup)
-btn.grid(column=2, row=2)
+btn.grid(column=2, row=4)
 
 
 window.mainloop()
